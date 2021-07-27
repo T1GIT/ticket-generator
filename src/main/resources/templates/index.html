@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer rel="script" type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer rel="script" type="text/javascript" src="script.js"></script>
+    <title>Генератор билетов</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Генератор билетов</h1>
+        <div id="cover" class="hidden">
+            <div id="bg"></div>
+                <label for="fileLoader">Загрузить задачи</label>
+                <input id="fileLoader" hidden name="file" type="file" accept="application/excel,application/x-excel"/>
+            <form hidden>
+                <hr>
+                <label for="subjectSelector"> Предмет: </label>
+                <select id="subjectSelector" autofocus></select>
+                <br>
+                <label for="themeSelector"> Тема: </label>
+                <select id="themeSelector"></select>
+                <h2>Количество вопросов</h2>
+                <label for="theoryCounter"> Теория: </label>
+                <input id="theoryCounter" value="0" type="number" min="0"/>
+                <br>
+                <label for="practiceCounter"> Практика: </label>
+                <input id="practiceCounter" value="0" type="number" min="0"/>
+                <br>
+                <label for="ticketCounter"> Количество билетов </label>
+                <input id="ticketCounter" value="1" type="number" min="1" max="1000"/>
+                <br>
+                <button id="generateButton" type="button">Генерировать</button>
+                <br>
+            </form>
+            <div id="ticket" hidden>
+                <h2 id="ticketNumber">
+                    <label for="ticketSelector">Билет №</label>
+                    <select id="ticketSelector"></select>
+                </h2>
+                <hr>
+                <h2 class="taskListTitle">Теоретические вопросы</h2>
+                <ol id="theoryTaskList"></ol>
+                <hr>
+                <h2 class="taskListTitle">Практические вопросы</h2>
+                <ol id="practiceTaskList"></ol>
+                <hr>
+                <button id="loadOneButton">Скачать билет №</button>
+            </div>
+            <button id="loadAllButton" hidden>Скачать билеты по теме</button>
+        </div>
+    </div>
+</body>
+</html>
